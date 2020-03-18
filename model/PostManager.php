@@ -1,5 +1,7 @@
 <?php
-class PostManager {
+require_once('model/Manager.php');
+
+class PostManager extends Manager {
     public function getPosts() {
         $db = $this->dbConnect();
         $req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts ORDER BY creation_date DESC LIMIT 0, 5');
@@ -14,10 +16,5 @@ class PostManager {
         $post = $req->fetch();
 
         return $post;
-    }
-
-    private function dbConnect() {
-        $db = new PDO('mysql:host=localhost;dbname=Blog;charset=utf8', 'root', 'root');
-        return $db;
     }
 }
