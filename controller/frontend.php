@@ -4,7 +4,7 @@ require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 
 function addComment($postId, $author, $comment) {
-    $commentManager = new CommentManager();
+    $commentManager = new Chapie\Blog\model\CommentManager();
     $affectedLines = $commentManager->postComment($postId, $author, $comment);
 
     if ($affectedLines === false) {
@@ -16,15 +16,15 @@ function addComment($postId, $author, $comment) {
 }
 
 function listPosts() {
-    $postManager = new PostManager();
+    $postManager = new Chapie\Blog\model\PostManager();
     $posts = $postManager->getPosts();
 
     require('view/frontend/listPostsView.php');
 }
 
 function post() {
-    $postManager = new PostManager();
-    $commentManager = new CommentManager();
+    $postManager = new Chapie\Blog\model\PostManager();
+    $commentManager = new Chapie\Blog\model\CommentManager();
 
     $post = $postManager-> getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);

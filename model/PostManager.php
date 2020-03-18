@@ -1,4 +1,7 @@
 <?php
+
+namespace Chapie\Blog\model;
+
 require_once('model/Manager.php');
 
 class PostManager extends Manager {

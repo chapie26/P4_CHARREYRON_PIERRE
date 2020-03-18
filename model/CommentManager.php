@@ -1,4 +1,7 @@
 <?php
+
+namespace Chapie\Blog\model;
+
 require_once('model/Manager.php');
 
 class CommentManager extends Manager {
