@@ -10,4 +10,4 @@
         A très vite sur mon blog :)
     </h3>
 </div>
-<?php $content = obj_get_clean(); ?>
+<?php $content = ob_get_clean(); ?>

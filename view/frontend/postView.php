@@ -18,10 +18,6 @@
 
 <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
     <div>
-        <label for="author">Auteur</label><br />
-        <input type="text" id="author" name="author" />
-    </div>
-    <div>
         <label for="comment">Commentaire</label><br />
         <textarea id="comment" name="comment"></textarea>
     </div>
@@ -34,13 +30,13 @@
 While ($comment = $comments->fetch())
 {
 ?>
-    <p><strong><?php echo htmlspecialchars($comment['author']); ?></strong> le <?php echo $comment['comment_date_fr']; ?></p>
+    <p><strong><?php echo htmlspecialchars($comment['login_mail']); ?></strong> le <?php echo $comment['comment_date_fr']; ?><a href="" >(Modifier)</a></p>
     <p><?php echo htmlspecialchars($comment['comment']); ?></p>
 <?php
 }
 $comments->closeCursor();
 ?>
 
-<?php $content = obj_get_clean(); ?>
+<?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
