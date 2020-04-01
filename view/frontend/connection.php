@@ -4,7 +4,7 @@
 <h2>CONNEXION</h2>
 <p>Veuillez indiquez votre pseudo/email ainsi que votre mot de passe pour vous connecter. Si vous n'avez pas encore de compte vous pouvez vous <a href="" >INSCRIRE</a></p>
 
-<form action="" method="post">
+<form action="index.php?action=connectUser" method="post">
     <div>
         <label for="pseudo">Pseudo/Email</label><br />
         <input type="text" id="pseudo" name="pseudo" />

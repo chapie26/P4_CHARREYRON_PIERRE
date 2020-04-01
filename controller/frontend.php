@@ -27,20 +27,33 @@ function post() {
     $postManager = new Chapie\Blog\model\PostManager();
     $commentManager = new Chapie\Blog\model\CommentManager();
 
-    $post = $postManager-> getPost($_GET['id']);
+    $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
 
     require('view/frontend/postView.php');
 }
 
 function addUser() {
-    $user = new Chapie/Blog/model/User();
-    $newMember = $user->register();
+    $user = new Chapie\Blog\model\User();
+    if (!empty($_POST['pseudo']) && !empty($_POST['mdp'])) {
+        $newMember = $user->register($_POST['pseudo'], $_POST['mdp']);
 
-    if ($newMember === false) {
-        throw new Exception('Impossible d\'ajouter le membre');
+        if ($newMember === null) {
+            throw new Exception('Login déjà utilisé');
+        }
+        else {
+            require('view/frontend/connexion.php');
+        }
     }
     else {
-        
+        throw new Exception('Impossible d\'ajouter le membre');
     }
+}
+
+function connectUser() {
+    $member = new Chapie\Blog\model\User();
+
+    $connectMember = $member->signin($_POST['pseudo'], $_POST['mdp']);
+
+    require('');
 }

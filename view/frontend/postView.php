@@ -18,6 +18,7 @@
 
 <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
     <div>
+        <input type="hidden" value="<?php echo $_SESSION['user_id'] ?>" name="author_id" />
         <label for="comment">Commentaire</label><br />
         <textarea id="comment" name="comment"></textarea>
     </div>

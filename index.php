@@ -26,6 +26,12 @@ try{
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
+        elseif ($_GET['action'] == 'addUser') {
+            addUser();
+        }
+        elseif ($_GET['action'] == 'connectUser') {
+            connectUser();
+        }
     }
     else {
         listPosts();
