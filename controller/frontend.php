@@ -6,6 +6,17 @@ require_once('model/User.php');
 
 function addComment($postId, $author, $comment) {
     $commentManager = new Chapie\Blog\model\CommentManager();
+    if (isset($_GET['id']) && $_GET['id'] > 0) {
+        if (!empty($_POST['author_id']) && !empty($_POST['comment'])) {
+            addComment($_GET['id'], $_POST['author_id'], $_POST['comment']);
+        }
+        else {
+            throw new Exception( 'Tous les champs ne sont pas remplis !');
+        }
+    }
+    else {
+        throw new Exception('Aucun identifiant de billet envoyé');
+    }
     $affectedLines = $commentManager->postComment($postId, $author, $comment);
 
     if ($affectedLines === false) {
@@ -27,10 +38,15 @@ function post() {
     $postManager = new Chapie\Blog\model\PostManager();
     $commentManager = new Chapie\Blog\model\CommentManager();
 
-    $post = $postManager->getPost($_GET['id']);
-    $comments = $commentManager->getComments($_GET['id']);
+    if (isset($_GET['id']) && $_GET['id'] > 0) {
+        $post = $postManager->getPost($_GET['id']);
+        $comments = $commentManager->getComments($_GET['id']);
 
-    require('view/frontend/postView.php');
+        require('view/frontend/postView.php');
+    }
+    else {
+        throw new Exception('Aucun identifiant de billet envoyé');
+    }
 }
 
 function addUser() {

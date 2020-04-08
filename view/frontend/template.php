@@ -7,6 +7,13 @@
     </head>
 
     <body>
+        <nav class="navbar">
+            <ol>
+                <li><a href="view/frontend/registrationView.php">Inscription</a></li>
+                <li><a href="">Connexion</a></li>
+                <li><a href="">Déconnexion</a></li>
+            </ol>
+        </nav>
         <?= $content ?>
     </body>
 </html>
