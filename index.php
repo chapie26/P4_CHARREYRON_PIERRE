@@ -1,25 +1,25 @@
 <?php
 require('controller/frontend.php');
 try{
-    if(isset($_GET['action'])) {
-        if($_GET['action'] == 'listPosts') {
+    switch(isset($_GET['action'])) {
+        case($_GET['action'] == 'listPosts'):
             listPosts();
-        }
-        elseif ($_GET['action'] == 'post') {
+        break;
+        case ($_GET['action'] == 'post'):
                 post();
-        }
-        elseif ($_GET['action'] == 'addComment') {
+        break;
+        case ($_GET['action'] == 'addComment'):
             addComment();
-        }
-        elseif ($_GET['action'] == 'addUser') {
+        break;
+        case ($_GET['action'] == 'addUser'):
             addUser();
-        }
-        elseif ($_GET['action'] == 'connectUser') {
+        break;
+        case ($_GET['action'] == 'connectUser'):
             connectUser();
-        }
-    }
-    else {
+        break;
+        default:
         listPosts();
+        break;
     }
 }
 catch(Exception $e) {
