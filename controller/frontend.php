@@ -51,8 +51,8 @@ function post() {
 
 function addUser() {
     $user = new Chapie\Blog\model\User();
-    if (!empty($_POST['pseudo']) && !empty($_POST['mdp'])) {
-        $newMember = $user->register($_POST['pseudo'], $_POST['mdp']);
+    if (!empty($_POST['pseudo']) && !empty($_POST['pass'])) {
+        $newMember = $user->register($_POST['pseudo'], $_POST['pass']);
 
         if ($newMember === null) {
             throw new Exception('Login déjà utilisé');
@@ -69,7 +69,7 @@ function addUser() {
 function connectUser() {
     $member = new Chapie\Blog\model\User();
 
-    $connectMember = $member->signin($_POST['pseudo'], $_POST['mdp']);
+    $connectMember = $member->signin($_POST['pseudo'], $_POST['pass']);
 
     require('');
 }

@@ -14,8 +14,9 @@ class User extends Manager {
             return null;
         }
         else {
+            $pass_hache = password_hash($_POST['pass'], PASSWORD_DEFAULT);
             $regist = $db->prepare('INSERT INTO member(login_mail, pass, right) VALUES(?,?,0)');
-            $newMember = $regist->execute(array($login_mail, $pass));
+            $newMember = $regist->execute(array($login_mail, $pass_hache));
 
             return $newMember;
         }

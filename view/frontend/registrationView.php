@@ -8,8 +8,8 @@
         <input type="text" id="pseudo" name="pseudo" />
     </div>
     <div>
-        <label for="mdp">Mot de passe</label><br />
-        <input type="password" id="mdp" name="mdp" />
+        <label for="pass">Mot de passe</label><br />
+        <input type="password" id="pass" name="pass" />
     </div>
     <div>
         <input type="submit" />
