@@ -4,14 +4,14 @@
 <h2>CONNEXION</h2>
 <p>Veuillez indiquez votre pseudo/email ainsi que votre mot de passe pour vous connecter. Si vous n'avez pas encore de compte vous pouvez vous <a href="" >INSCRIRE</a></p>
 
-<form action="index.php?action=connectUser" method="post">
+<form action="/OCP4/P4_CHARREYRON_PIERRE/index.php?action=connectUser" method="post">
     <div>
         <label for="pseudo">Pseudo/Email</label><br />
         <input type="text" id="pseudo" name="pseudo" />
     </div>
     <div>
-        <label for="mdp">Commentaire</label><br />
-        <input type="password" id="mdp" name="mdp" />
+        <label for="pass">Commentaire</label><br />
+        <input type="password" id="pass" name="pass" />
     </div>
     <div>
         <input type="submit" />

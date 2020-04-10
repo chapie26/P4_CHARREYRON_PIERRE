@@ -53,12 +53,11 @@ function addUser() {
     $user = new Chapie\Blog\model\User();
     if (!empty($_POST['pseudo']) && !empty($_POST['pass'])) {
         $newMember = $user->register($_POST['pseudo'], $_POST['pass']);
-
-        if ($newMember === null) {
+        if ($newMember === null || !$newMember) {
             throw new Exception('Login déjà utilisé');
         }
         else {
-            require('view/frontend/connexion.php');
+            require('view/frontend/connection.php');
         }
     }
     else {
@@ -70,6 +69,14 @@ function connectUser() {
     $member = new Chapie\Blog\model\User();
 
     $connectMember = $member->signin($_POST['pseudo'], $_POST['pass']);
+    if (!$connectMember){
+        throw new Exception('Connexion impossible');
+    }
+    else {
+        header('Location: index.php');
+    }
+}
 
-    require('');
+function newUser() {
+    require('view/frontend/registrationView.php');
 }

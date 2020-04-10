@@ -1,25 +1,29 @@
 <?php
 require('controller/frontend.php');
 try{
+    error_log($_GET['action'],0);
     switch(isset($_GET['action'])) {
         case($_GET['action'] == 'listPosts'):
             listPosts();
-        break;
+            break;
         case ($_GET['action'] == 'post'):
                 post();
-        break;
+            break;
         case ($_GET['action'] == 'addComment'):
             addComment();
-        break;
+            break;
+        case ($_GET['action'] == 'newUser');
+            newUser();
+            break;
         case ($_GET['action'] == 'addUser'):
             addUser();
-        break;
+            break;
         case ($_GET['action'] == 'connectUser'):
             connectUser();
-        break;
+            break;
         default:
-        listPosts();
-        break;
+            listPosts();
+            break;
     }
 }
 catch(Exception $e) {
