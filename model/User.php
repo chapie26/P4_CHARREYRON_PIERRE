@@ -24,15 +24,14 @@ class User extends Manager {
     }
     public function signin($login_mail, $pass) {
         $db = $this->dbConnect();
-        $regist = $db->prepare('SELECT * FROM member WHERE login_mail = ?');
-        $regist->execute(array($login_mail));
-        $member = $regist->fetch();
+        $login = $db->prepare('SELECT * FROM member WHERE login_mail = ?');
+        $login->execute(array($login_mail));
+        $member = $login->fetch();
         if (password_verify($_POST['pass'], $member['pass'])){
-            return true;
+            return $member;
         }
         return false;
     }
-
     public function getMember($user_id) {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT * FROM member WHERE id = ?');

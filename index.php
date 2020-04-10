@@ -2,25 +2,30 @@
 session_start();
 require('controller/frontend.php');
 try{
-    error_log($_GET['action'],0);
-    switch(isset($_GET['action'])) {
-        case($_GET['action'] == 'listPosts'):
+    switch($_GET['action']) {
+        case 'listPosts':
             listPosts();
             break;
-        case ($_GET['action'] == 'post'):
-                post();
+        case 'post':
+            post();
             break;
-        case ($_GET['action'] == 'addComment'):
+        case 'addComment':
             addComment();
             break;
-        case ($_GET['action'] == 'newUser');
+        case 'newUser';
             newUser();
             break;
-        case ($_GET['action'] == 'addUser'):
+        case 'addUser':
             addUser();
             break;
-        case ($_GET['action'] == 'connectUser'):
+        case 'connectUser':
             connectUser();
+            break;
+        case 'disconnectUser':
+            disconnectUser();
+            break;
+        case 'connect':
+            connect();
             break;
         default:
             listPosts();

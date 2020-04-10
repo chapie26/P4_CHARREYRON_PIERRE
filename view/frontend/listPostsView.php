@@ -3,8 +3,10 @@
 <?php ob_start(); ?>
 <h1>Mon super blog!</h1>
 <h2>Derniers billets du blog :</h2>
-
 <?php
+if(isAuthentication()) {
+    echo '<h3>Bonjour ' . $_SESSION['pseudo'] . '</h3>';
+}
 while ($data = $posts->fetch())
 {
 ?>

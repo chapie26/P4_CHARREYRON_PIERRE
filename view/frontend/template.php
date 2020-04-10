@@ -9,9 +9,19 @@
     <body>
         <nav class="navbar">
             <ol>
-                <li><a href="index.php?action=newUser">Inscription</a></li>
-                <li><a href="view/frontend/connection.php">Connexion</a></li>
-                <li><a href="index.php">Déconnexion</a></li>
+                <?php
+                if(isAuthentication()) {
+                ?>
+                    <li><a href="index.php?action=disconnectUser">Déconnexion</a></li>
+                <?php
+                }
+                else {
+                ?>
+                    <li><a href="index.php?action=newUser">Inscription</a></li>
+                    <li><a href="index.php?action=connect">Connexion</a></li>
+                <?php
+                }
+                ?>
             </ol>
         </nav>
         <?= $content ?>

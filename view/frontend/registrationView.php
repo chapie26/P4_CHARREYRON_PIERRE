@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 <h2>INSCRIPTION</h2>
-<p>Veuillez remplir les champs suivant afin de vous inscrire. Si vous avez déjà un compte vous pouvez vous <a href="" >CONNECTER</a></p>
+<p>Veuillez remplir les champs suivant afin de vous inscrire. Si vous avez déjà un compte vous pouvez vous <a href="index.php?action=connect" >CONNECTER</a></p>
 
 <form action="index.php?action=addUser" method="post">
     <div>
