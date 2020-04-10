@@ -73,10 +73,25 @@ function connectUser() {
         throw new Exception('Connexion impossible');
     }
     else {
+        $_SESSION['pseudo'] = $login_mail;
         header('Location: index.php');
     }
 }
 
 function newUser() {
     require('view/frontend/registrationView.php');
+}
+
+function disconnectUser() {
+    $_SESSION = array();
+    session_destroy();
+}
+
+function isAuthentication() {
+    if (isset($_SESSION['pseudo'])) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }

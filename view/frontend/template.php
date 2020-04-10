@@ -11,7 +11,7 @@
             <ol>
                 <li><a href="index.php?action=newUser">Inscription</a></li>
                 <li><a href="view/frontend/connection.php">Connexion</a></li>
-                <li><a href="">Déconnexion</a></li>
+                <li><a href="index.php">Déconnexion</a></li>
             </ol>
         </nav>
         <?= $content ?>
