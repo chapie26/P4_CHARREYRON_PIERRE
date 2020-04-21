@@ -27,6 +27,9 @@ try{
         case 'connect':
             connect();
             break;
+        case 'admin':
+            administration();
+            break;
         default:
             listPosts();
             break;

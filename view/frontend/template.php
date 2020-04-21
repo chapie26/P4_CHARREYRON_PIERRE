@@ -14,6 +14,11 @@
                 ?>
                     <li><a href="index.php?action=disconnectUser">Déconnexion</a></li>
                 <?php
+                    if(isAdmin()) {
+                        ?>
+                            <li><a href="index.php?action=Admin">Administration</a></li>
+                        <?php
+                    }
                 }
                 else {
                 ?>

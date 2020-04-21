@@ -68,20 +68,19 @@ function connectUser() {
     $member = new Chapie\Blog\model\User();
 
     $connectMember = $member->signin($_POST['pseudo'], $_POST['pass']);
-    error_log($_POST['pseudo']);
     if (!$connectMember){
         throw new Exception('Connexion impossible');
     }
     else {
+        $_SESSION['admin'] = $connectMember['admin'];
         $_SESSION['pseudo'] = $connectMember['login_mail'];
         $_SESSION['user_id'] = $connectMember['id'];
-        error_log($_SESSION['pseudo'], 0);
         header('Location: index.php');
     }
 }
 
 function newUser() {
-    require('view/frontend/registrationView.php');
+    require('view/frontend/registration.php');
 }
 
 function connect() {
@@ -94,8 +93,21 @@ function disconnectUser() {
     header('Location: index.php');
 }
 
+function administration() {
+    require('view/frontend/administration.php');
+}
+
 function isAuthentication() {
     if (isset($_SESSION['pseudo'])) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function isAdmin() {
+    if (isset($_SESSION['admin']) && $_SESSION['admin'] === '1') {
         return true;
     }
     else {

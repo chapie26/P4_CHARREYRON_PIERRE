@@ -32,11 +32,4 @@ class User extends Manager {
         }
         return false;
     }
-    public function getMember($user_id) {
-        $db = $this->dbConnect();
-        $req = $db->prepare('SELECT * FROM member WHERE id = ?');
-        $member = $req->execute(array($user_id));
-
-        return $member;
-    }
 }

@@ -41,7 +41,7 @@ While ($comment = $comments->fetch())
     <?php
     if(isAuthentication() === true){
     ?>
-    <a href="" >(Signaler)</a></p>
+    <a href="index.php?action=flag&post['id']&comment['id']" >(Signaler)</a></p>
     <?php
     }
     ?>
