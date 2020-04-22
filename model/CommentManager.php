@@ -21,12 +21,18 @@ class CommentManager extends Manager {
     }
 
     public function flagComment($postId, $id) {
-        error_log($postId, 0);
-        error_log($id, 0);
         $db = $this->dbConnect();
         $flag = $db->prepare('UPDATE comments SET flag = 1 WHERE post_id = ? AND id = ?');
         $flag->execute(array(intval($postId), intval($id)));
 
         return $flag;
+    }
+
+    public function flagedComments() {
+        $db = $this->dbConnect();
+        $commentsFlag = $db->prepare('SELECT * FROM comments WHERE flag = 1');
+        $commentsFlag->execute(array());
+
+        return $commentsFlag;
     }
 }
