@@ -114,3 +114,9 @@ function isAdmin() {
         return false;
     }
 }
+
+function isFlag() {
+    $commentManager = new Chapie\Blog\model\CommentManager();
+    $flag = $commentManager->flagComment($_GET["post_id"], $_GET["id"]);
+    header('Location: index.php');
+}

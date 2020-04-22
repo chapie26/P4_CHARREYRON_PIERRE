@@ -16,7 +16,7 @@
                 <?php
                     if(isAdmin()) {
                         ?>
-                            <li><a href="index.php?action=Admin">Administration</a></li>
+                            <li><a href="index.php?action=admin">Administration</a></li>
                         <?php
                     }
                 }

@@ -30,6 +30,9 @@ try{
         case 'admin':
             administration();
             break;
+        case 'flag':
+            isFlag();
+            break;
         default:
             listPosts();
             break;
