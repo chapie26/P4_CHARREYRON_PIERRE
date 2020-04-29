@@ -94,7 +94,12 @@ function disconnectUser() {
 }
 
 function administration() {
-    require('view/frontend/administration.php');
+    if (isAdmin()) {
+        require('view/frontend/administration.php');
+    }
+    else {
+        throw new Exception('Vous n\'avez pas les droits admin pour accéder à cette page');
+    }
 }
 
 function isAuthentication() {
@@ -119,4 +124,8 @@ function isFlag() {
     $commentManager = new Chapie\Blog\model\CommentManager();
     $flag = $commentManager->flagComment($_GET["post_id"], $_GET["id"]);
     header('Location: index.php');
+}
+
+function getMessage() {
+    require('view/frontend/errorView.php');
 }
