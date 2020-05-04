@@ -30,7 +30,7 @@ class CommentManager extends Manager {
 
     public function flagedComments() {
         $db = $this->dbConnect();
-        $commentsFlag = $db->prepare('SELECT * FROM comments WHERE flag = 1');
+        $commentsFlag = $db->prepare('SELECT comments.id ,comments.author_id, comments.comment, member.login_mail AS login_mail, DATE_FORMAT(comments.comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments INNER JOIN member ON author_id = member.id WHERE flag = 1 ORDER BY comment_date DESC');
         $commentsFlag->execute(array());
 
         return $commentsFlag;
