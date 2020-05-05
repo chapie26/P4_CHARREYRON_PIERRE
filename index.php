@@ -33,6 +33,9 @@ try{
         case 'flag':
             isFlag();
             break;
+        case 'newPost':
+            newPost();
+            break;
         default:
             listPosts();
             break;

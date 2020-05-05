@@ -129,6 +129,17 @@ function isFlag() {
     header('Location: index.php');
 }
 
+function newPost() {
+    $postManager = new Chapie\Blog\model\PostManager();
+    if (!empty($_POST['mytextarea']) && !empty($_POST['title'])) {
+        $addPost = $postManager->addPost(htmlspecialchars($_POST['mytextarea']), $_POST['title']);
+        header('Location: index.php');
+    }
+    else {
+        throw new Exception('Tous les champs ne sont pas rempli');
+    }
+}
+
 function getMessage() {
     require('view/frontend/errorView.php');
 }
