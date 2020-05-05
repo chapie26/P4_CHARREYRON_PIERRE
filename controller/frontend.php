@@ -94,9 +94,11 @@ function disconnectUser() {
 }
 
 function administration() {
+    $commentManager = new Chapie\Blog\model\CommentManager();
+    $postManager = new Chapie\Blog\model\PostManager();
     if (isAdmin()) {
-        $commentManager = new Chapie\Blog\model\CommentManager();
         $flags = $commentManager->flagedComments();
+        $posts = $postManager->getPosts();
 
         require('view/frontend/administration.php');
     }

@@ -10,7 +10,7 @@
         <em>le <?php echo $post['creation_date_fr']; ?></em>
     </h3>
     <p>
-        <?php echo htmlspecialchars($post['content']); ?>
+        <?php echo htmlspecialchars_decode($post['content']); ?>
     </p>
 </div>
 

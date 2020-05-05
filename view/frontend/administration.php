@@ -19,6 +19,24 @@
             </div>
         </form>
 
+        <?php
+        while ($data = $posts->fetch())
+        {
+        ?>
+            <div>
+                <p>
+                    <strong>
+                        <?= htmlspecialchars($data['title']); ?>
+                    </strong>
+                    (<a href="index.php?action=update&amp;id=<?= $data['id']; ?>">Modifier</a>
+                    <a href="index.php?action=delete&amp;id=<?= $data['id']; ?>">Supprimer</a>)
+                </p>
+            </div>
+        <?php
+        }
+        $posts->closeCursor();
+        ?>
+
         <h3>Commentaires signalés</h3>
         <?php
         While ($flag = $flags->fetch()) {
