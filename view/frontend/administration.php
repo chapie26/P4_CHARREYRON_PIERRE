@@ -28,7 +28,7 @@
                     <strong>
                         <?= htmlspecialchars($data['title']); ?>
                     </strong>
-                    (<a href="index.php?action=update&amp;id=<?= $data['id']; ?>">Modifier</a>
+                    (<a href="index.php?action=update&amp;id=<?= $data['id']; ?>">Modifier</a> /
                     <a href="index.php?action=delete&amp;id=<?= $data['id']; ?>">Supprimer</a>)
                 </p>
             </div>

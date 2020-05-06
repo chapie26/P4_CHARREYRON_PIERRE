@@ -145,7 +145,7 @@ function newPost() {
 function updatePost() {
     $postManager = new Chapie\Blog\model\PostManager();
 
-    if (isset($_GET['id']) && $_GET['id'] > 0) {
+    if (isAdmin() && isset($_GET['id']) && $_GET['id'] > 0) {
         $post = $postManager->getPost($_GET['id']);
 
         require('view/frontend/update.php');
@@ -157,7 +157,7 @@ function updatePost() {
 
 function noPost() {
     $postManager = new Chapie\Blog\model\PostManager();
-    if (isset($_GET['id']) && $_GET['id'] > 0) {
+    if (isAdmin() && isset($_GET['id']) && $_GET['id'] > 0) {
         $deletePost = $postManager->deletePost($_GET['id']);
 
         header('Location: index.php');
