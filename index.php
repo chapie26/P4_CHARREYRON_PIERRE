@@ -39,6 +39,9 @@ try{
         case 'update';
             updatePost();
             break;
+        case 'postUpdated';
+            postUpdated();
+            break;
         case 'delete';
             noPost();
             break;

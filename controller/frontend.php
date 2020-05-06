@@ -155,6 +155,18 @@ function updatePost() {
     }
 }
 
+function postUpdated() {
+    $postManager = new Chapie\Blog\model\PostManager();
+
+    if (!empty($_POST['mytextarea']) && !empty($_POST['title']) && isset($_GET['id']) && $_GET['id'] > 0) {
+        $updatePost = $postManager->updatePost(htmlspecialchars($_POST['mytextarea']), $_POST['title'], $_GET['id']);
+        header('Location: index.php');
+    }
+    else {
+        throw new Exception ('Tous les champs ne sont pas remplis');
+    }
+}
+
 function noPost() {
     $postManager = new Chapie\Blog\model\PostManager();
     if (isAdmin() && isset($_GET['id']) && $_GET['id'] > 0) {

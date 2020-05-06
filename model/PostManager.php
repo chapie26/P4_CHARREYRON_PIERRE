@@ -29,10 +29,10 @@ class PostManager extends Manager {
         return $newPost;
     }
 
-    public function updatePost() {
+    public function updatePost($content, $title, $id) {
         $db = $this->dbConnect();
         $refreshPost = $db->prepare('UPDATE posts SET content = ?, title = ? WHERE id = ?');
-        $refreshPost->execute(array($id));
+        $refreshPost->execute(array($content, $title, $id));
 
         return $refreshPost;
     }
