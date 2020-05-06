@@ -36,6 +36,9 @@ try{
         case 'newPost':
             newPost();
             break;
+        case 'delete';
+            noPost();
+            break;
         default:
             listPosts();
             break;

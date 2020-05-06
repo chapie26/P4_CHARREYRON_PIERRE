@@ -37,11 +37,13 @@ class PostManager extends Manager {
         return $refreshPost;
     }
 
-    public function deletePost() {
+    public function deletePost($id) {
         $db = $this->dbConnect();
         $noPost = $db->prepare('DELETE FROM posts WHERE id = ?');
         $noPost->execute(array($id));
+        $delete = $noPost->fetch();
 
-        return $noPost;
+        return $delete;
+        error_log($delete, 0);
     }
 }
