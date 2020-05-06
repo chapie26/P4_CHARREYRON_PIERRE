@@ -31,7 +31,7 @@ class PostManager extends Manager {
 
     public function updatePost() {
         $db = $this->dbConnect();
-        $refreshPost = $db->prepare('UPDATE posts SET WHERE id = ?');
+        $refreshPost = $db->prepare('UPDATE posts SET content = ?, title = ? WHERE id = ?');
         $refreshPost->execute(array($id));
 
         return $refreshPost;

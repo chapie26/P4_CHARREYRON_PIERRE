@@ -142,6 +142,19 @@ function newPost() {
     }
 }
 
+function updatePost() {
+    $postManager = new Chapie\Blog\model\PostManager();
+
+    if (isset($_GET['id']) && $_GET['id'] > 0) {
+        $post = $postManager->getPost($_GET['id']);
+
+        require('view/frontend/update.php');
+    }
+    else {
+        throw new Exception('Impossible de modifier le chapitre');
+    }
+}
+
 function noPost() {
     $postManager = new Chapie\Blog\model\PostManager();
     if (isset($_GET['id']) && $_GET['id'] > 0) {
