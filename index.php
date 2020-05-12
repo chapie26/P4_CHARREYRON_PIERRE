@@ -45,6 +45,9 @@ try{
         case 'delete';
             noPost();
             break;
+        case 'deleteComment';
+            commentDeleted();
+            break;
         default:
             listPosts();
             break;

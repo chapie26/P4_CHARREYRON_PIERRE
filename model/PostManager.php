@@ -44,6 +44,5 @@ class PostManager extends Manager {
         $delete = $noPost->fetch();
 
         return $delete;
-        error_log($delete, 0);
     }
 }

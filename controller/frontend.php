@@ -169,6 +169,7 @@ function postUpdated() {
 
 function noPost() {
     $postManager = new Chapie\Blog\model\PostManager();
+
     if (isAdmin() && isset($_GET['id']) && $_GET['id'] > 0) {
         $deletePost = $postManager->deletePost($_GET['id']);
 
@@ -176,6 +177,19 @@ function noPost() {
     }
     else {
         throw new Exception ('Impossible de supprimer le chapitre');
+    }
+}
+
+function commentDeleted() {
+    $commentManager = new Chapie\Blog\model\CommentManager();
+
+    if (isAdmin() && isset($_GET['id']) && $_GET['id'] > 0) {
+        $deletePost = $commentManager->deleteComment($_GET['id']);
+
+        header('Location: index.php');
+    }
+    else {
+        throw new Exception ('Impossible de supprimer le commentaire');
     }
 }
 
