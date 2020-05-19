@@ -193,6 +193,7 @@ function commentDeleted() {
     }
 }
 
-function getMessage() {
+function getMessage($e) {
+    $errorMessage = $e->getMessage();
     require('view/frontend/errorView.php');
 }
