@@ -1,0 +1,37 @@
+ol {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120%;
+    margin: auto;
+    height: 50px;
+    border-radius: 20px;
+    background-color: rgb(209, 209, 209);
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 800;
+}
+
+h1 {
+    text-align: center;
+}
+
+.messagePerso {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.5em;
+}
+
+.chapitre {
+    text-align: center;
+}
