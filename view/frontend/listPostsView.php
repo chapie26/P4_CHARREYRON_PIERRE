@@ -1,24 +1,24 @@
 <?php $title = 'Blog de Mr Jean FORTEROCHE'; ?>
 
 <?php ob_start(); ?>
-<h1>Billet simple pour l'Alaska</h1>
 <?php
 if(isAuthentication()) {
     echo '<p class="messagePerso">Bonjour ' . $_SESSION['pseudo'] . ' et bienvenu sur mon blog, je vous souhaite une bonne lecture</p>';
 }
 ?>
-<h2>Voici la liste des chapitres de mon livre :</h2>
+<h2>Voici mon livre (n'hésitez pas à commenter au fur à mesure des chapitres afin de dire ce que vous en pensez :) )</h2>
+<h1>Billet simple pour l'Alaska</h1>
 <?php
 while ($data = $posts->fetch())
 {
 ?>
     <div>
-        <h2 class="chapitre">
+        <h2 class="titreChapitre">
             <?= htmlspecialchars($data['title']); ?>
             <em>le <?= $data['creation_date_fr']; ?></em>
         </h2>
         <p>
-            <?= htmlspecialchars_decode($data['content']); ?><br />
+            <p  class="textChapitre"><?= htmlspecialchars_decode($data['content']); ?></p><br />
             <em><a href="index.php?action=post&amp;id=<?= $data['id']; ?>">Commenter</a></em>
         </p>
     </div>

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="public/style.css" rel="stylesheet" />
+        <link href="public/stylesheet/style.css" rel="stylesheet" />
 
         <script src="https://cdn.tiny.cloud/1/ixuygdvn8dxxs0e5sl10ihp8bk79mm50lr20kondefxlz84e/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
         <script>tinymce.init({ selector:'#mytextarea', language: 'fr_FR'});</script>
@@ -42,7 +42,7 @@
         <?php
         While ($flag = $flags->fetch()) {
         ?>
-            <p><strong><?php echo htmlspecialchars($flag['login_mail']); ?></strong> le <?php echo $flag['comment_date_fr']; ?>(<a href="index.php?action=deleteComment&amp;id=<?= $flag['id']; ?>">Supprimer</a>)</p>
+            <p><strong><?php echo htmlspecialchars($flag['login_mail']); ?></strong> le <?php echo $flag['comment_date_fr']; ?>(<a href="index.php?action=deleteComment&amp;id=<?= $flag['id']; ?>">Supprimer</a> / <a href="index.php?action=validComment&id=<?= $flag['id'] ?>">Valider</a>)</p>
             <p><?php echo htmlspecialchars($flag['comment']); ?></p>
         <?php
         }

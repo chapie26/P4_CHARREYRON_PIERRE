@@ -44,4 +44,12 @@ class CommentManager extends Manager {
 
         return $deleteFlag;
     }
+
+    public function validComment($id) {
+        $db = $this->dbConnect();
+        $flagDeleted = $db->prepare('UPDATE comments SET flag = 0 WHERE id = ?');
+        $flagDeleted->execute(array(intval($id)));
+
+        return $flagDeleted;
+    }
 }

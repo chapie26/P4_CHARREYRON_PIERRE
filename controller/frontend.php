@@ -193,6 +193,18 @@ function commentDeleted() {
     }
 }
 
+function commentValided() {
+    $commentManager = new Chapie\Blog\model\CommentManager();
+
+    if (isAdmin() && isset($_GET['id']) && $_GET['id'] > 0) {
+        $noFlag = $commentManager->validComment($_GET['id']);
+        header('Location: index.php');
+    }
+    else {
+        throw new Exception ('Impossible d\'enlever le signalement du commentaire' );
+    }
+}
+
 function getMessage($e) {
     $errorMessage = $e->getMessage();
     require('view/frontend/errorView.php');
