@@ -1,5 +1,6 @@
 body {
     width: 1880px;
+    height: 120%;
     background-image: url("../images/alaska.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -56,6 +57,6 @@ p {
     height: 100px;
 }
 
-.main {
+main {
     margin-top: 100px;
 }

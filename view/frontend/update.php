@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php $title = 'Blog de Mr Jean FORTEROCHE'; ?>
+
+<?php ob_start(); ?>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,4 +20,6 @@
             </div>
         </form>
     </body>
-</html>
+<?php $content = ob_get_clean(); ?>
+
+<?php require('template.php'); ?>

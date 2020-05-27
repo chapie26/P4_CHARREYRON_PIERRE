@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf8" />
         <title><?= $title ?></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="public/stylesheet/style.css" rel="stylesheet" />
     </head>
 
@@ -29,6 +30,8 @@
                 ?>
             </ol>
         </nav>
-        <?= $content ?>
+        <main>
+            <?= $content ?>
+        </main>
     </body>
 </html>
