@@ -1,7 +1,7 @@
 <?php $title = 'Blog de Mr Jean FORTEROCHE'; ?>
 
 <?php ob_start(); ?>
-<div class="main">
+<div class="formulaire">
     <h2>INSCRIPTION</h2>
     <p>Veuillez remplir les champs suivant afin de vous inscrire. Si vous avez déjà un compte vous pouvez vous <a href="index.php?action=connect" >CONNECTER</a></p>
 

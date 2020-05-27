@@ -12,14 +12,14 @@ if(isAuthentication()) {
 while ($data = $posts->fetch())
 {
 ?>
-    <div>
-        <h2 class="titreChapitre">
+    <div class="chapter">
+        <h2>
             <?= htmlspecialchars($data['title']); ?>
             <em>le <?= $data['creation_date_fr']; ?></em>
         </h2>
         <p>
-            <p  class="textChapitre"><?= htmlspecialchars_decode($data['content']); ?></p><br />
-            <em><a href="index.php?action=post&amp;id=<?= $data['id']; ?>">Commenter</a></em>
+            <p><?= htmlspecialchars_decode($data['content']); ?></p><br />
+            <em><a href="index.php?action=post&amp;id=<?= $data['id']; ?>">Commenter ce chapitre</a></em>
         </p>
     </div>
 <?php

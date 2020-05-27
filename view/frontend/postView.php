@@ -1,37 +1,20 @@
 <?php $title = 'Blog de Mr Jean FORTEROCHE'; ?>
 
 <?php ob_start(); ?>
-<h1>Mon super blog!</h1>
+<h1>Billet simple pour l'Alaska</h1>
 <p><a href="index.php">Retour à la liste des billets</a></p>
 
-<div>
-    <h3>
+<div class="chapter">
+    <h2>
         <?php  echo htmlspecialchars($post['title']); ?>
         <em>le <?php echo $post['creation_date_fr']; ?></em>
-    </h3>
+    </h2>
     <p>
         <?php echo htmlspecialchars_decode($post['content']); ?>
     </p>
 </div>
 
 <h2>Commentaires</h2>
-
-<?php
-if(isAuthentication() === true) {
-?>
-    <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
-        <div>
-            <input type="hidden" value="<?php echo $_SESSION['user_id'] ?>" name="author_id" />
-            <label for="comment">Commentaire</label><br />
-            <textarea id="comment" name="comment"></textarea>
-        </div>
-        <div>
-            <input type="submit" />
-        </div>
-    </form>
-<?php
-}
-?>
 
 <?php
 While ($comment = $comments->fetch())
@@ -49,6 +32,23 @@ While ($comment = $comments->fetch())
 <?php
 }
 $comments->closeCursor();
+?>
+
+<?php
+if(isAuthentication() === true) {
+?>
+    <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+        <div>
+            <input type="hidden" value="<?php echo $_SESSION['user_id'] ?>" name="author_id" />
+            <label for="comment">Commentaire</label><br />
+            <textarea id="comment" name="comment"></textarea>
+        </div>
+        <div>
+            <input type="submit" />
+        </div>
+    </form>
+<?php
+}
 ?>
 
 <?php $content = ob_get_clean(); ?>

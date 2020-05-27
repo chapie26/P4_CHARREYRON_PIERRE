@@ -8,8 +8,10 @@
 
         <p><a href="index.php">Retour à la liste des billets</a></p>
         <form action="index.php?action=newPost" method="post">
-            <label for="title">Titre du chapitre</label>
-            <input type="text" id="title" name="title">
+            <div class="saisi">
+                <label for="title">Titre du chapitre:</label>
+                <input type="text" id="title" name="title">
+            </div>
             <textarea id="mytextarea" name="mytextarea" placeholder="Ajouter votre contenu ici"></textarea>
             <div>
                 <input type="submit" />

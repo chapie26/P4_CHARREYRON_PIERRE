@@ -4,7 +4,7 @@
         <meta charset="utf8" />
         <title><?= $title ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="public/stylesheet/style.css" rel="stylesheet" />
+        <link href="./public/stylesheet/style.css" rel="stylesheet" />
     </head>
 
     <body>
@@ -30,7 +30,7 @@
                 ?>
             </ol>
         </nav>
-        <main>
+        <main class="contenu">
             <?= $content ?>
         </main>
     </body>

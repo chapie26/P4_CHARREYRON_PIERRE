@@ -12,8 +12,10 @@
     <body>
         <p><a href="index.php">Retour à la liste des billets</a></p>
         <form action="index.php?action=postUpdated&amp;id=<?= $post['id'] ?>" method="post">
-            <label for="title">Titre du chapitre</label>
-            <input type="text" id="title" name="title" value="<?php  echo htmlspecialchars($post['title']); ?>">
+            <div class="saisi">
+                <label for="title">Titre du chapitre:</label>
+                <input type="text" id="title" name="title" value="<?php  echo htmlspecialchars($post['title']); ?>">
+            </div>
             <textarea id="mytextarea" name="mytextarea"><?php echo htmlspecialchars_decode($post['content']); ?></textarea>
             <div>
                 <input type="submit" />

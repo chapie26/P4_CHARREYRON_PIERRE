@@ -1,9 +1,10 @@
 body {
     width: 1880px;
-    height: 120%;
+    height: 100%;
     background-image: url("../images/alaska.jpeg");
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     position: absolute;
 }
 
@@ -43,7 +44,7 @@ h1 {
     margin-top: 100px;
 }
 
-.titreChapitre {
+.chapter {
     text-align: center;
 }
 
@@ -57,6 +58,20 @@ p {
     height: 100px;
 }
 
-main {
+.contenu {
     margin-top: 100px;
+}
+
+.saisi {
+    text-align: center;
+}
+
+#title {
+    font-size: 1.6em;
+    border-radius: 40px;
+}
+
+.formulaire {
+    font-size: 1.4em;
+    text-align: center;
 }
