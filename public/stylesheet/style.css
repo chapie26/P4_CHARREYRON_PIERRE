@@ -46,6 +46,7 @@ h1 {
 
 .chapter {
     text-align: center;
+    font-size: 1.2em;
 }
 
 p {
@@ -56,22 +57,40 @@ p {
     position: fixed;
     width: 100%;
     height: 100px;
+    z-index: 2;
 }
 
 .contenu {
-    margin-top: 100px;
-}
-
-.saisi {
-    text-align: center;
-}
-
-#title {
-    font-size: 1.6em;
-    border-radius: 40px;
+    margin: 150px;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding:25px
 }
 
 .formulaire {
-    font-size: 1.4em;
+    font-size: 1.8em;
     text-align: center;
+    margin-bottom: 30px;
+}
+
+input {
+    border-radius: 20px;
+    font-size: 0.5em;
+}
+
+.formulaire textarea {
+    border-radius: 20px;
+    font-size: 1.5em;
+}
+
+.title {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+a {
+    color: blue;
+}
+
+a:hover {
+    color: gold;
 }

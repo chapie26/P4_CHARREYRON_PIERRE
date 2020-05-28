@@ -37,7 +37,7 @@ $comments->closeCursor();
 <?php
 if(isAuthentication() === true) {
 ?>
-    <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+    <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post" class="formulaire">
         <div>
             <input type="hidden" value="<?php echo $_SESSION['user_id'] ?>" name="author_id" />
             <label for="comment">Commentaire</label><br />

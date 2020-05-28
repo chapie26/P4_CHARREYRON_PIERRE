@@ -7,10 +7,10 @@
     </head>
 
         <p><a href="index.php">Retour à la liste des billets</a></p>
-        <form action="index.php?action=newPost" method="post">
-            <div class="saisi">
+        <form action="index.php?action=newPost" method="post" class="formulaire">
+            <div>
                 <label for="title">Titre du chapitre:</label>
-                <input type="text" id="title" name="title">
+                <input type="text" id="title" name="title" class="title">
             </div>
             <textarea id="mytextarea" name="mytextarea" placeholder="Ajouter votre contenu ici"></textarea>
             <div>
@@ -22,7 +22,7 @@
         while ($data = $posts->fetch())
         {
         ?>
-            <div>
+            <div class="chapter">
                 <p>
                     <strong>
                         <?= htmlspecialchars($data['title']); ?>
@@ -36,16 +36,18 @@
         $posts->closeCursor();
         ?>
 
-        <h3>Commentaires signalés</h3>
-        <?php
-        While ($flag = $flags->fetch()) {
-        ?>
-            <p><strong><?php echo htmlspecialchars($flag['login_mail']); ?></strong> le <?php echo $flag['comment_date_fr']; ?>(<a href="index.php?action=deleteComment&amp;id=<?= $flag['id']; ?>">Supprimer</a> / <a href="index.php?action=validComment&id=<?= $flag['id'] ?>">Valider</a>)</p>
-            <p><?php echo htmlspecialchars($flag['comment']); ?></p>
-        <?php
-        }
-        $flags->closeCursor();
-        ?>
+        <div clas="flag">
+            <h3>Commentaires signalés</h3>
+            <?php
+            While ($flag = $flags->fetch()) {
+            ?>
+                <p><strong><?php echo htmlspecialchars($flag['login_mail']); ?></strong> le <?php echo $flag['comment_date_fr']; ?>(<a href="index.php?action=deleteComment&amp;id=<?= $flag['id']; ?>">Supprimer</a> / <a href="index.php?action=validComment&id=<?= $flag['id'] ?>">Valider</a>)</p>
+                <p><?php echo htmlspecialchars($flag['comment']); ?></p>
+            <?php
+            }
+            $flags->closeCursor();
+            ?>
+        </div>
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
