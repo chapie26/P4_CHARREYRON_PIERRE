@@ -6,6 +6,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: absolute;
+    margin: 0;
 }
 
 ol {
@@ -63,7 +64,8 @@ p {
 .contenu {
     margin: 150px;
     background-color: rgba(255, 255, 255, 0.3);
-    padding:25px
+    padding:25px;
+    border-radius: 20px;
 }
 
 .formulaire {
@@ -87,6 +89,10 @@ input {
     margin-bottom: 20px;
 }
 
+.tox-tinymce {
+    border-radius: 20px!important;
+}
+
 a {
     color: blue;
 }
@@ -108,13 +114,25 @@ a:hover {
         width: 100%;
     }
 
+    a {
+        font-size: 1em;
+    }
+
     .contenu {
         margin: 0;
         padding-top: 60px;
     }
 
+    .formulaire {
+        font-size: 1em;
+    }
+
     .formulaire textarea {
         font-size: 1em;
+    }
+
+    .chapter h2 {
+        text-align: center;
     }
 }
 
